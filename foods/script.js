@@ -3,6 +3,17 @@ const icons = document.querySelectorAll(".section-1-icons i")
 let i = 1
 
 
+
+document.querySelector(".menu").addEventListener(
+    "click", () => {
+       document.querySelectorAll(".target").forEach((item) => {
+           item.classList.toggle("change")
+       })
+    })
+
+// toggle method - used to add a class to element if it doesn"t have
+
+
 // this function adds and removes class "change" in an interval,
 // if the counter reaches the last element the first element will be added
 // with class change and the counter i will again be reset to 1
