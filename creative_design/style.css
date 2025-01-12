@@ -1,0 +1,37 @@
+/* Common Styles */
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Monoton&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; /*removes default underlines*/
+    list-style-type: none; /*removes bullets from list items*/
+    outline: none;
+    font-family: "Bellota Text", cursive;
+    font-weight: 400;
+}
+
+html {
+    font-size: 62.5%; /*to make 1rem equals 10px*/
+}
+/* End of Common Styles */
+
+/* Section-1 */
+.section-1 {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+}
+
+.floating-bg {
+    height: 70rem;
+    width: 70rem;
+    background-color: rgba(50,231,255, 0.8);
+    position: absolute;
+    top: 15%;
+    left: calc(50% - 35rem);
+
+}
+/* End of Section-1 */
