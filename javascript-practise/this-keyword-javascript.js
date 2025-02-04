@@ -62,3 +62,24 @@ const daddy = {
 
 daddy.greet();
 daddy.calcAge();
+
+
+// in situation where we need to consider more arguments in a function
+// we use the arguments function this is only applicable for normal functions and not arrow function
+
+const addExpr = function (a,b) {
+    console.log(arguments);
+    return a+b;
+};
+
+const a = addExpr(2,5)
+const b = addExpr(3,5,6,7)
+
+console.log(a,b);
+
+var addArrow = (a,b) => {
+    console.log(arguments);
+    return a + b;
+}
+
+addArrow(2,5,5,5);
