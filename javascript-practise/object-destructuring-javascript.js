@@ -28,6 +28,11 @@ const restaurant = {
         console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
             will be delivered to ${address} at ${time}`);
     },
+
+    orderPizza: function(mainIngredient, ...otherIngredients) {
+        console.log(mainIngredient);
+        console.log(otherIngredients);
+    }
 }
 ;
 
@@ -48,7 +53,7 @@ restaurant.orderDelivery(
 );
 
 
-console.log(restaurant.orderDelivery);
+// console.log(restaurant.orderDelivery);
 
 // console.log(restaurant.openingHours);
 
@@ -83,3 +88,52 @@ const obj = {a:23, b: 7, c: 14};
 
 const {fri:{open,close}} = openingHours;
 // console.log(open,close);
+
+//////////////////////////////////////////////////
+//
+// spread operators
+//
+//////////////////////////////////////////////////
+
+const arr = [7,8,9]
+
+const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+//shallow copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//combining two arrays
+const menu_mix = [...restaurant.starterMenu, ...restaurant.mainMenu]; 
+// console.log(menu_mix);
+
+// iterables are arrays, strings, maps and sets but not objects
+// we can use spread operator on strings
+
+const str = "Somnath";
+const letters = [...str, ' ', 'M.']
+console.log(letters);
+console.log(...str);
+console.log("S","o");
+// console.log(`${...str} Mahato`); // multiple values separated by comma is expected when we pass 
+// arguments into function or when we built a new array 
+
+
+
+//spread operators accepting variable number of arguments
+const add = function(...numbers) {
+    //console.log(numbers);
+    let sum = 0;
+    for(let i=0; i<numbers.length; i++) sum += numbers[i];
+    console.log(sum);
+}
+
+add(2,3)
+add(5,3,7,2) //<----- arbitrary amount of arguments
+
+const x = [23,5,7]
+
+add(...x);
+
+
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinachs');
