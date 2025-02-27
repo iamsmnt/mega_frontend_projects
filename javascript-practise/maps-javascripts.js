@@ -61,7 +61,7 @@ console.log(rest.get(arr));
 //setting up values inside a map without using the set method
 
 const question = new Map ([
-    ['question','How to flirt with a girl?'],
+    ['question','How to impress a girl?'],
     [1,'Compliment her'],
     [2,'Be a pookie'],
     [3, 'both 1 & 2'],
