@@ -200,5 +200,83 @@ const addVAT = addTax.bind(null,0.23); //parameters position are crucial
 console.log(addVAT(100));
 
 
+
+
+const poll = {
+    question: 'What is your favourite programming language?',
+    options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+    // This generates [0, 0, 0, 0]. More in the next section 😃
+    answers: new Array(4).fill(0), 
+    registerNewAnswer() {
+        // const answer = prompt(`${this.question}\n`)
+    }
+}
+
+poll.registerNewAnswer();
+
+
+//Immediately Invoked Function Expressions (IIFE)
+
+const runOnce = function () {
+    console.log('This will never run again');
+};
+runOnce();
+
+//example iife
+(function () {
+    console.log('This will never run again');
+})();
+
+(() => console.log('This will also never run again!'))();
+
+
+
+//Closures;
+
+
+//example 1
+let f;
+
+const g = function () {
+    let a = 23;
+    f = function (){
+        a = 2 * a;
+        console.log(a);
+    }
+}
+
+const h = function() {
+    const b = 223;
+    f = function() {
+        console.log(b * 2);
+    }
+}
+
+g(); //Even after g is executed 
+f(); //f still have variable a's access
+h();
+f();
+
+
+console.dir(f);
+
+
+//example 2
+
+const boardPassengers = function(n,wait) {
+    const perGroup = n/3;
+
+    setTimeout(function(){
+        console.log(`we are now boarding all ${n} passengers`);
+        console.log(`There are 3 groups, each with ${perGroup} passengers`);
+    }, wait * 1000);
+
+    console.log(`will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180,3);
+
+
+
  
 
